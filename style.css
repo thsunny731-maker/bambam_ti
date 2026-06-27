@@ -384,3 +384,109 @@ button {
     width: 100%;
   }
 }
+
+/* AI 상담 전략 패널 */
+.ai-counseling-panel {
+  margin-top: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.counseling-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+@media (max-width: 860px) {
+  .counseling-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.selected-student-info {
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.counseling-input-area label {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.counseling-input-area textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 16px;
+}
+
+.preview-area {
+  background: var(--surface-strong);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.preview-area h4 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.preview-area pre {
+  margin: 0;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: var(--ink);
+}
+
+.counseling-result-area {
+  background: var(--surface-strong);
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.counseling-result-area h4 {
+  margin: 0 0 12px 0;
+}
+
+.counseling-result {
+  flex-grow: 1;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 16px;
+  overflow-y: auto;
+  max-height: 400px;
+  line-height: 1.6;
+}
+
+.disclaimer {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 12px 0 0 0;
+  text-align: center;
+}
+
+.loading-text {
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.error-text {
+  color: var(--danger);
+  font-weight: 800;
+}
