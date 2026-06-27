@@ -46,7 +46,7 @@ ${teacherConcern}
 6. 다음 수업에서 해볼 수 있는 작은 지원`;
 
   try {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
     
     const response = await fetch(url, {
       method: 'POST',
