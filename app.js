@@ -276,9 +276,9 @@ function setupAdminEvents() {
     const student = currentCounselingStudent;
     
     const index = STUDENTS.findIndex(s => s.id === student.id);
-    const alias = \`학생 \${String.fromCharCode(65 + index)}\`;
+    const alias = `학생 ${String.fromCharCode(65 + index)}`;
     
-    const gradesValues = Object.entries(student.grades).map(([k, v]) => \`\${k}: \${v}\`).join(', ');
+    const gradesValues = Object.entries(student.grades).map(([k, v]) => `${k}: ${v}`).join(', ');
     const traitsText = student.traits.join(' ') + ' ' + student.teacherMemo;
     
     const previewData = {
@@ -303,8 +303,8 @@ function setupAdminEvents() {
 
     const student = currentCounselingStudent;
     const index = STUDENTS.findIndex(s => s.id === student.id);
-    const alias = \`학생 \${String.fromCharCode(65 + index)}\`; 
-    const gradesValues = Object.entries(student.grades).map(([k, v]) => \`\${k}: \${v}\`).join(', ');
+    const alias = `학생 ${String.fromCharCode(65 + index)}`; 
+    const gradesValues = Object.entries(student.grades).map(([k, v]) => `${k}: ${v}`).join(', ');
     const traitsText = student.traits.join(' ') + ' ' + student.teacherMemo;
 
     const payload = {
@@ -336,14 +336,14 @@ function setupAdminEvents() {
       
       if (data.success) {
         const formattedResult = data.result
-          .replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')
-          .replace(/\\n/g, '<br>');
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\n/g, '<br>');
         counselingResult.innerHTML = formattedResult;
       } else {
-        counselingResult.innerHTML = \`<span class="error-text">AI 상담 전략을 불러오지 못했습니다. API 키 또는 Vercel 환경 변수를 확인해주세요.<br><br>오류: \${data.error}</span>\`;
+        counselingResult.innerHTML = `<span class="error-text">AI 상담 전략을 불러오지 못했습니다. API 키 또는 Vercel 환경 변수를 확인해주세요.<br><br>오류: ${data.error}</span>`;
       }
     } catch (error) {
-      counselingResult.innerHTML = \`<span class="error-text">AI 상담 전략을 불러오지 못했습니다. API 키 또는 Vercel 환경 변수를 확인해주세요.</span>\`;
+      counselingResult.innerHTML = `<span class="error-text">AI 상담 전략을 불러오지 못했습니다. API 키 또는 Vercel 환경 변수를 확인해주세요.</span>`;
     } finally {
       getStrategyBtn.disabled = false;
     }
